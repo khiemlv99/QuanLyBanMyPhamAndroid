@@ -1,14 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.TrangChuFragment">
+    tools:context=".Fragment.TrangChuFragment"
+
+    >
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+
+    <ViewFlipper
+        android:id="@+id/viewPlipper"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        >
+    </ViewFlipper>
+
+    <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_below="@+id/viewPlipper"
+        android:id="@+id/recyclerView"
+        />
 
-</FrameLayout>
+</RelativeLayout>
