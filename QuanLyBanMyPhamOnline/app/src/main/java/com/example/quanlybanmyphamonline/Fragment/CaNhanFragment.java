@@ -15,9 +15,12 @@ import android.widget.Button;
 import com.example.quanlybanmyphamonline.DangNhapActivity;
 import com.example.quanlybanmyphamonline.R;
 
+
+
 public class CaNhanFragment extends Fragment {
 
-    Button btnDangNhapDangKy;
+     Button btnDangNhapDangKy;
+
 
     public CaNhanFragment() {
         // Required empty public constructor

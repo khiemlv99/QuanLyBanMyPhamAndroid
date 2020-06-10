@@ -56,25 +56,24 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_TimKiem:
                     getSupportActionBar().setTitle("Tìm kiếm");
-                    TimKiemFragment timKiemFragment = new TimKiemFragment();
-                    loadFragment(timKiemFragment);
+                     TimKiemFragment fragment1= new TimKiemFragment();
+                    loadFragment(fragment1);
                     return true;
                 case R.id.navigation_Danhmuc:
                     getSupportActionBar().setTitle("Danh mục");
-                    DanhMucFragment danhMucFragment = new DanhMucFragment();
-                    loadFragment(danhMucFragment);
+                    DanhMucFragment fragment2 = new DanhMucFragment();
+                    loadFragment(fragment2);
                     return true;
                 case R.id.navigation_ThongBao:
                     getSupportActionBar().setTitle("Thông báo");
-                    ThongBaoFragment thongBaoFragment = new ThongBaoFragment();
-                    loadFragment(thongBaoFragment);
+                    ThongBaoFragment fragment3 = new ThongBaoFragment();
+                    loadFragment(fragment3);
                     return true;
                 case R.id.navigation_CaNhan:
                     getSupportActionBar().setTitle("Cá nhân");
-                    CaNhanFragment caNhanFragment = new CaNhanFragment();
-                    loadFragment(caNhanFragment);
+                    CaNhanFragment fragment4 = new CaNhanFragment();
+                    loadFragment(fragment4);
                     return true;
-
             }
             return false;
         }
