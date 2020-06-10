@@ -19,7 +19,7 @@
            android:drawableEnd="@drawable/continuenum1"
            android:gravity="start|center"
            android:padding="10dp"
-           android:text="Chào mừng bạn đến với Mr Robot\nĐăng nhập/ Đăng ký"
+           android:text="Chào mừng bạn!\nĐăng nhập/ Đăng ký"
            android:textAlignment="viewStart"
            android:textAllCaps="false"
            android:textSize="18sp" />
