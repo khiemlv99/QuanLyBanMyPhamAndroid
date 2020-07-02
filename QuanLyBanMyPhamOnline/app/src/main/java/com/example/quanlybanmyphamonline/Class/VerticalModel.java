@@ -7,6 +7,12 @@ public class VerticalModel {
     public String tilte;
     public  ArrayList<HorizontalModel> arrayList;
 
+        public VerticalModel()
+          {
+              this.tilte="";
+              this.arrayList=null;
+          }
+
     public String getTilte() {
         return tilte;
     }

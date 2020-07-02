@@ -1,4 +1,4 @@
-package com.example.quanlybanmyphamonline;
+package com.example.quanlybanmyphamonline.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -10,6 +10,8 @@ import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import com.example.quanlybanmyphamonline.R;
 
 public class DangKyActivity extends AppCompatActivity {
 
