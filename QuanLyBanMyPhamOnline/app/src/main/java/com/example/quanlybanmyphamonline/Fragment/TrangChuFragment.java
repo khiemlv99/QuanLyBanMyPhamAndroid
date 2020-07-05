@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +17,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 import android.widget.ViewFlipper;
 
 import com.android.volley.RequestQueue;
@@ -54,6 +56,7 @@ public class TrangChuFragment extends Fragment {
     VerticalModel verticalModel;
     RecyclerView listView;
     ArrayList<String> arrayHinh;
+    Toolbar toolbar;
 
 
     public TrangChuFragment() {
@@ -80,6 +83,7 @@ public class TrangChuFragment extends Fragment {
             TaoPlipper();
             Recyclerview();
             ListView();
+
 
         } else {
             checkconnection.Toast_Short(getContext(), "Hãy kiểm tra lại kết nối ");
@@ -111,6 +115,7 @@ public class TrangChuFragment extends Fragment {
         verticalRecyclerView = getView().findViewById(R.id.recyclerView);
         viewFlipper = getView().findViewById(R.id.viewPlipper);
         listView= getView().findViewById(R.id.listviewSanPhamBanChay);
+
     }
 
     public void Recyclerview() {
@@ -184,6 +189,7 @@ public class TrangChuFragment extends Fragment {
         arrListView=new ArrayList<>();
         lstviewAdapter = new RecyclerviewTrangChuAdapter(getContext(), arrListView);
         listView.setHasFixedSize(true);
+
         listView.setLayoutManager(new GridLayoutManager(getContext(),2));
         listView.setAdapter(lstviewAdapter);
         TaoDuLieuListView();
@@ -234,6 +240,8 @@ public class TrangChuFragment extends Fragment {
         });
         requestQueue.add(jsonArrayRequest);
     }
+
+
 
 
 

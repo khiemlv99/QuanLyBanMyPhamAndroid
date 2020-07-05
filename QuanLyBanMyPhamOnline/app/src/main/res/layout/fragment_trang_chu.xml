@@ -1,62 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.TrangChuFragment"
+    android:orientation="vertical"
     >
+
 
     <!-- TODO: Update blank fragment layout -->
 
-    <ScrollView
-
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+        <ViewFlipper
+            android:id="@+id/viewPlipper"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            >
+        </ViewFlipper>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:id="@+id/recyclerView"
+            />
         <LinearLayout
+            android:paddingTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+
             >
-            <ViewFlipper
-                android:id="@+id/viewPlipper"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                >
-            </ViewFlipper>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginTop="20dp"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/viewPlipper"
-                android:id="@+id/recyclerView"
+                android:text="Sản phẩm mới nhất"
+                android:textSize="18dp"
+
+                android:id="@+id/txtSPMN"
                 />
-<LinearLayout
-    android:paddingTop="20dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
 
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:text="Sản phẩm mới nhất"
-        android:textSize="18dp"
-        />
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:id="@+id/listviewSanPhamBanChay"
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="5dp"
-        android:id="@+id/listviewSanPhamBanChay"
-        android:layout_below="@+id/recyclerView"
-        android:scrollbars="vertical"
 
-    /></LinearLayout>
-
+                />
         </LinearLayout>
 
-    </ScrollView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
 
 
-</RelativeLayout>
+
+
+</LinearLayout>

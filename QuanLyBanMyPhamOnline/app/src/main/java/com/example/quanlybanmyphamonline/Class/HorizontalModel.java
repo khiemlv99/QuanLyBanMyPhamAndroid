@@ -11,6 +11,14 @@ public class HorizontalModel {
     }
 
 
+    public HorizontalModel(int masp, int maloaisp, String ten, String mota, String hinh, String gia) {
+        this.masp = masp;
+        this.maloaisp = maloaisp;
+        this.ten = ten;
+        this.mota = mota;
+        this.hinh = hinh;
+        this.gia = gia;
+    }
 
     public HorizontalModel()
     {
