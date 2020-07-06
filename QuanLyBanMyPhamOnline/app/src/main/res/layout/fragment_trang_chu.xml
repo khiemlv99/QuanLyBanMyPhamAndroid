@@ -1,27 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragment.TrangChuFragment"
-
+    android:orientation="vertical"
     >
+
 
     <!-- TODO: Update blank fragment layout -->
 
-
-    <ViewFlipper
-        android:id="@+id/viewPlipper"
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         >
-    </ViewFlipper>
+        <ViewFlipper
+            android:id="@+id/viewPlipper"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            >
+        </ViewFlipper>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/viewPlipper"
-        android:id="@+id/recyclerView"
-        />
+            android:id="@+id/recyclerView"
+            />
+        <LinearLayout
+            android:paddingTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
 
-</RelativeLayout>
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sản phẩm mới nhất"
+                android:textSize="18dp"
+
+                android:id="@+id/txtSPMN"
+                />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:id="@+id/listviewSanPhamBanChay"
+
+
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
+
+
+
+
+</LinearLayout>

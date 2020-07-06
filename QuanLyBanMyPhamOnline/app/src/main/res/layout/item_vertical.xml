@@ -33,17 +33,18 @@
          android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:text="MORE"
-        android:background="@color/colorPrimary"
+        android:background="@android:color/holo_blue_light"
          />
 </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewVertical"
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:orientation="horizontal"
         android:layout_below="@+id/relative"
 
         />
+
 </RelativeLayout>
