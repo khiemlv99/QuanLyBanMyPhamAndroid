@@ -173,7 +173,7 @@ public class TimKiemFragment extends Fragment {
 
 
                         HorizontalModel horizontalModel = new HorizontalModel();
-                        horizontalModel.setGia("Giá : " + gia);
+                        horizontalModel.setGia( gia);
                         horizontalModel.setMota(mota);
                         horizontalModel.setTen(tensp);
                         horizontalModel.setHinh(hinh);

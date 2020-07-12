@@ -1,6 +1,7 @@
 package com.example.quanlybanmyphamonline.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,9 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.quanlybanmyphamonline.Class.ChiTietSanPham;
+import com.example.quanlybanmyphamonline.Class.HorizontalModel;
 import com.example.quanlybanmyphamonline.R;
+import com.example.quanlybanmyphamonline.activity.DetailActivity;
 import com.squareup.picasso.Picasso;
 
 
@@ -26,10 +29,10 @@ import java.util.ArrayList;
 
 public class ChiTietSPAdapter extends RecyclerView.Adapter<ChiTietSPAdapter.ViewHolder>{
 
-    ArrayList<ChiTietSanPham> arrayList;
+    ArrayList<HorizontalModel> arrayList;
     Context context;
 
-    public ChiTietSPAdapter(ArrayList<ChiTietSanPham> arrayList, Context context) {
+    public ChiTietSPAdapter(ArrayList<HorizontalModel> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
     }
@@ -44,9 +47,20 @@ public class ChiTietSPAdapter extends RecyclerView.Adapter<ChiTietSPAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
-        holder.txtTieuDe.setText(arrayList.get(position).getTenSanPham());
-        Picasso.get().load(arrayList.get(position).getHinhanh()).into(holder.imghinh);
-        int id = arrayList.get(position).getMaLoai();
+        holder.txtTieuDe.setText(arrayList.get(position).getTen());
+        Picasso.get().load(arrayList.get(position).getHinh()).into(holder.imghinh);
+        int id = arrayList.get(position).getMasp();
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("masp",arrayList.get(position).getMasp());
+                intent.putExtra("tensp",arrayList.get(position).getTen());
+                intent.putExtra("giasp",arrayList.get(position).getGia());
+                intent.putExtra("hinh",arrayList.get(position).getHinh());
+                context.startActivity(intent);
+            }
+        });
 
     }
 

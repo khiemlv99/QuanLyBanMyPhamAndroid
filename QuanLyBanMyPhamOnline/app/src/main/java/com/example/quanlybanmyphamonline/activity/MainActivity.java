@@ -21,7 +21,9 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SearchView;
+import android.widget.Toast;
 
+import com.example.quanlybanmyphamonline.Class.GioHang;
 import com.example.quanlybanmyphamonline.Fragment.CaNhanFragment;
 import com.example.quanlybanmyphamonline.Fragment.DanhMucFragment;
 import com.example.quanlybanmyphamonline.Fragment.ThongBaoFragment;
@@ -29,6 +31,8 @@ import com.example.quanlybanmyphamonline.Fragment.TimKiemFragment;
 import com.example.quanlybanmyphamonline.Fragment.TrangChuFragment;
 import com.example.quanlybanmyphamonline.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     boolean status =false;
     TrangChuFragment trangChuFragment;
     MenuItem menuItem;
+    public static ArrayList<GioHang> mangGioHang;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +57,24 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.nav_main);
         searchview=findViewById(R.id.search_view);
         imageView=findViewById(R.id.btnGioHang);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),GioHangActivity.class);
+                startActivity(intent);
+            }
+        });
         layout=findViewById(R.id.search_container);
+//        tao mang toan cuc chua danh sach hang da mua
+        if(mangGioHang !=null)
+        {
+            Toast.makeText(this, mangGioHang.size()+"", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            mangGioHang = new ArrayList<>();
+        }
+
         bottomNavigationView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener);
         bottomNavigationView.setSelectedItemId(R.id.navigation_trangchu);
         searchview.setOnClickListener(new View.OnClickListener() {

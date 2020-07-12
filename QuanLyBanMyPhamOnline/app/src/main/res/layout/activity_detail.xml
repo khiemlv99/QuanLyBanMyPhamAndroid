@@ -47,20 +47,23 @@
                     android:textColor="#100F0F"
                     android:text="Tên sản phẩm"
                     />
+
                 <TextView
+                    android:id="@+id/txtGiaCTSP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#f00000"
-                    android:textSize="20sp"
-                    android:id="@+id/txtGiaCTSP"
                     android:layout_margin="10dp"
                     android:text="Giá sản phẩm"
-                    android:textStyle="bold|italic"
-                    />
+                    android:textColor="#f00000"
+                    android:textSize="20sp"
+                    android:textStyle="bold|italic" />
                 <Spinner
-                    android:layout_width="match_parent"
+                    android:background="@drawable/spiner"
+                    android:padding="15dp"
+                    android:layout_margin="3dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_gravity="left"
                     android:layout_marginTop="5dp"
                     android:id="@+id/spinner"
                     />

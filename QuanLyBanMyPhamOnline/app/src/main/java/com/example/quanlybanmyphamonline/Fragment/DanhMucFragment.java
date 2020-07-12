@@ -25,8 +25,10 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.quanlybanmyphamonline.Adapter.ChiTietSPAdapter;
+import com.example.quanlybanmyphamonline.Adapter.HorizontalRecylerViewAdapter;
 import com.example.quanlybanmyphamonline.Adapter.LoaiSPAdapter;
 import com.example.quanlybanmyphamonline.Class.ChiTietSanPham;
+import com.example.quanlybanmyphamonline.Class.HorizontalModel;
 import com.example.quanlybanmyphamonline.Class.LoaiSP;
 import com.example.quanlybanmyphamonline.MyOnClickListener;
 import com.example.quanlybanmyphamonline.R;
@@ -46,8 +48,8 @@ public class DanhMucFragment extends Fragment {
     String url = "http://192.168.56.1:8080/androidwebservice/getSPTheoLoai.php";
     ArrayList<LoaiSP> arr;
     LoaiSPAdapter adapter;
-    ArrayList<ChiTietSanPham>arrChiTiet;
-    ChiTietSPAdapter adapterChiTiet;
+    ArrayList<HorizontalModel>arrChiTiet;
+    HorizontalRecylerViewAdapter adapterChiTiet;
     int idloai ;
 
     public DanhMucFragment() {
@@ -108,6 +110,8 @@ public class DanhMucFragment extends Fragment {
                                 recyclerView.setLayoutManager(gridLayoutManager);
                                 arrChiTiet = new ArrayList<>();
                                 getData(loaiSP.getMaLoai(),recyclerView);
+
+
                             }
                         });
 
@@ -148,15 +152,17 @@ public class DanhMucFragment extends Fragment {
                     for(int i =0;i<array.length();i++)
                     {
                         JSONObject object = array.getJSONObject(i);
-                        arrChiTiet.add(new ChiTietSanPham(object.getInt("MaSanPham"),
-                                object.getString("TenSanPham"),
-                                object.getString("HinhAnh"),
-                                object.getString("MoTa"),
-                                object.getInt("GiaSanPham"),
+                        arrChiTiet.add(new HorizontalModel(object.getInt("MaSanPham"),
                                 object.getInt("MaLoaiSanPham"),
+                                object.getString("TenSanPham"),
+                                object.getString("MoTa"),
+                                object.getString("HinhAnh"),
+
+                                object.getInt("GiaSanPham"),
+
                                 object.getInt("SoLuong")));
                     }
-                    adapterChiTiet = new ChiTietSPAdapter(arrChiTiet,getContext());
+                    adapterChiTiet = new HorizontalRecylerViewAdapter(getContext(),arrChiTiet);
                     re.setAdapter(adapterChiTiet);
 
                 } catch (JSONException e) {

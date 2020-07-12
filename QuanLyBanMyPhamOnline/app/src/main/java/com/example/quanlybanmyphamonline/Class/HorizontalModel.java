@@ -5,19 +5,30 @@ public class HorizontalModel {
     public String ten;
     public String mota;
     public String hinh;
-    public String gia;
-    public String getGia() {
+    public int gia;
+    public int soluong;
+
+    public int getSoluong() {
+        return soluong;
+    }
+
+    public void setSoluong(int soluong) {
+        this.soluong = soluong;
+    }
+
+    public int getGia() {
         return gia;
     }
 
 
-    public HorizontalModel(int masp, int maloaisp, String ten, String mota, String hinh, String gia) {
+    public HorizontalModel(int masp, int maloaisp, String ten, String mota, String hinh, int gia, int soluong) {
         this.masp = masp;
         this.maloaisp = maloaisp;
         this.ten = ten;
         this.mota = mota;
         this.hinh = hinh;
         this.gia = gia;
+        this.soluong =soluong;
     }
 
     public HorizontalModel()
@@ -27,10 +38,11 @@ public class HorizontalModel {
           this.ten="";
           this.mota="";
           this.hinh="";
-          this.gia="";
+          this.gia=0;
+          this.soluong =0;
     }
 
-    public void setGia(String gia) {
+    public void setGia(int gia) {
         this.gia = gia;
     }
 

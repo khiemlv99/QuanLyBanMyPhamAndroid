@@ -41,7 +41,7 @@ public class RecyclerviewTrangChuAdapter extends RecyclerView.Adapter<Recyclervi
     public void onBindViewHolder(@NonNull RecylerViewHolder holder, final int position) {
         final HorizontalModel horizontalModel=arrayList.get(position);
         holder.txtTen.setText(horizontalModel.getTen());
-        holder.txtGia.setText(horizontalModel.getGia());
+        holder.txtGia.setText(horizontalModel.getGia()+"");
 
         Picasso.get().load(horizontalModel.getHinh()).placeholder(R.drawable.bill32).error(R.drawable.cart32).into(holder.imageView);
 
@@ -55,6 +55,7 @@ public class RecyclerviewTrangChuAdapter extends RecyclerView.Adapter<Recyclervi
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, DetailActivity.class);
+                intent.putExtra("masp",arrayList.get(position).getMasp());
                 intent.putExtra("tensp",arrayList.get(position).getTen());
                 intent.putExtra("giasp",arrayList.get(position).getGia());
                 intent.putExtra("motasp",arrayList.get(position).getMota());

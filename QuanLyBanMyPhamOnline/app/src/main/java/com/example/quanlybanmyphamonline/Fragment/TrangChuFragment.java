@@ -152,7 +152,7 @@ public class TrangChuFragment extends Fragment {
 
 
                         HorizontalModel horizontalModel = new HorizontalModel();
-                        horizontalModel.setGia("Giá : " + gia);
+                        horizontalModel.setGia(gia);
                         horizontalModel.setMota(mota);
                         horizontalModel.setTen(tensp);
                         horizontalModel.setHinh(hinh);
@@ -214,7 +214,7 @@ public class TrangChuFragment extends Fragment {
 
 
                         HorizontalModel horizontalModel = new HorizontalModel();
-                        horizontalModel.setGia("Giá : " + gia);
+                        horizontalModel.setGia(gia);
                         horizontalModel.setMota("Mô tả sản phẩm: " + mota);
                         horizontalModel.setTen(tensp);
                         horizontalModel.setHinh(hinh);
@@ -240,11 +240,5 @@ public class TrangChuFragment extends Fragment {
         });
         requestQueue.add(jsonArrayRequest);
     }
-
-
-
-
-
-
 }
 
